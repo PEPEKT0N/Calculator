@@ -1,0 +1,134 @@
+﻿<Page x:Class="ExamCalc.EngineeringCalc"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ExamCalc"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EngineeringCalc">
+
+    <Grid OpacityMask="Black" Background="Black">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.33*"/>
+            <RowDefinition Height="0.33*"/>
+            <RowDefinition Height="0.67*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!--<Menu x:Name="menu" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" Background="AliceBlue">
+            <MenuItem Header="Файл">
+                <Button x:Name="Engineering_calc" Click="Engineering_calc_Click">Инженерный калькулятор</Button>
+                <Button x:Name="exit" Click="exit_Click">Выход</Button>
+            </MenuItem>
+            <MenuItem Header="Стиль">
+                <RadioButton Content="Темная тема" IsChecked="True"/>
+                <RadioButton Content="Светлая тема"/>
+            </MenuItem>
+            <MenuItem Header="История">
+                <Button>Показать историю</Button>
+                <Button>Очистить историю</Button>
+            </MenuItem>
+        </Menu>-->
+        <TextBox x:Name="result_display" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" TextAlignment="Right" FontSize="12" VerticalAlignment="Center" BorderThickness="0" Background="Black" Foreground="White" SelectionTextBrush="White" OpacityMask="Black" IsReadOnly="True"/>
+        <TextBox x:Name="display" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" Text="0" TextAlignment="Right" FontSize="24" VerticalAlignment="Center" BorderThickness="0" Background="Black" Foreground="White" SelectionTextBrush="White" OpacityMask="Black" IsReadOnly="True"/>
+
+        <StackPanel Grid.Row="0" Grid.Column="4" Grid.RowSpan="3">
+            
+        </StackPanel>
+        <Grid Grid.Row="3" Grid.Column="4" Background="#FF948F8F" Margin="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>                
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>  
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <RadioButton x:Name="btn_switch_grad" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Margin="2" Background="#FF948F8F" Foreground="Black" FontFamily="Segoe UI" FontSize="14" IsChecked="True" Content="Deg"/>
+            <RadioButton x:Name="btn_switch_rad" Grid.Row="2" Grid.Column="0" Grid.RowSpan="2" Margin="2" Background="#FF948F8F" Foreground="Black" FontFamily="Segoe UI" FontSize="14" Content="Rad"/>
+
+            <Button x:Name="btn_sin" Grid.Row="0" Grid.Column="1" Content="SIN" Margin="1" Background="#FF948F8F" Click="btn_sin_Click" FontSize="10"/>
+            <Button x:Name="btn_cos" Grid.Row="1" Grid.Column="1" Content="COS" Margin="1" Background="#FF948F8F" Click="btn_cos_Click" FontSize="10"/>
+            <Button x:Name="btn_tan" Grid.Row="2" Grid.Column="1" Content="TAN" Margin="1" Background="#FF948F8F" Click="btn_tan_Click" FontSize="10"/>
+            <Button x:Name="btn_cot" Grid.Row="3" Grid.Column="1" Content="CTAN" Margin="1" Background="#FF948F8F" Click="btn_cot_Click" FontSize="10"/>
+        </Grid >
+    
+    <!--<StackPanel Grid.Row="3" Grid.Column="4" Background="#FF948F8F" Margin="2">
+            <RadioButton x:Name="btn_switch_grad" Margin="2" Background="#FF948F8F" Foreground="Black" FontFamily="Segoe UI" FontSize="20" IsChecked="True" Content="Grad"/>
+            <RadioButton x:Name="btn_switch_rad" Margin="2" Background="#FF948F8F" Foreground="Black" FontFamily="Segoe UI" FontSize="20" Content="Rad"/>
+        </StackPanel>-->
+        
+        <Grid Grid.Row="4" Grid.Column="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>                
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btn_exp" Background="#FF948F8F" Margin="2" Click="btn_exp_Click">e</Button>
+            <Button x:Name="btn_pi" Grid.Column="1" Background="#FF948F8F" Margin="2" Click="btn_pi_Click">π</Button>
+        </Grid>
+        
+        <Grid Grid.Row="5" Grid.Column="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btn_log" Background="#FF948F8F" Margin="2" Click="btn_log_Click">log</Button>
+            <Button x:Name="btn_ln" Grid.Column="1" Background="#FF948F8F" Margin="2" Click="btn_ln_Click">ln</Button>
+        </Grid>
+        
+        <Grid Grid.Row="6" Grid.Column="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btn_pow2" Background="#FF948F8F" Margin="2" Click="btn_pow2_Click">x^(2)</Button>
+            <Button x:Name="btn_powN" Grid.Column="1" Background="#FF948F8F" Margin="2" Click="btn_powN_Click">x^(n)</Button>
+        </Grid>
+        
+        <Grid Grid.Row="7" Grid.Column="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btm_factorial" Background="#FF948F8F" Margin="2" Click="btm_factorial_Click">x!</Button>
+            <Button x:Name="btn_x_Pow_minusOne" Grid.Column="1" Background="#FF948F8F" Margin="2" Click="btn_x_Pow_minusOne_Click">1/x</Button>
+        </Grid>
+        
+        <Button x:Name="btn_clear" Grid.Row="3" Grid.Column="0" Content="AC" Margin="2" Background="#FF948F8F" FontFamily="Segoe UI" FontSize="24" Click="btn_clear_Click"  />
+        <Button x:Name="btn_sign" Grid.Row="3" Grid.Column="1" Content="+/-" Margin="2" Background="#FF948F8F" FontFamily="Segoe UI" FontSize="24" Click="btn_sign_Click" />
+        <Button x:Name="btn_percent" Grid.Row="3" Grid.Column="2" Content="%" Margin="2" Background="#FF948F8F" FontFamily="Segoe UI" FontSize="24" Click="btn_percent_Click"  />
+        <Button x:Name="btn_division" Grid.Row="3" Grid.Column="3" Content="/" Margin="2" Background="#FFC88307" FontFamily="Segoe UI" FontSize="24" Click="btn_division_Click"  />
+        <Button x:Name="btn_multiply" Grid.Row="4" Grid.Column="3" Content="X" Margin="2" Background="#FFC88307" FontFamily="Segoe UI" FontSize="24" Click="btn_multiply_Click"  />
+        <Button x:Name="btn_minus" Grid.Row="5" Grid.Column="3" Content="-" Margin="2" Background="#FFC88307" FontFamily="Segoe UI" FontSize="24" Click="btn_minus_Click"  />
+        <Button x:Name="btn_plus" Grid.Row="6" Grid.Column="3" Content="+" Margin="2" Background="#FFC88307" FontFamily="Segoe UI" FontSize="24" Click="btn_plus_Click"  />
+        <Button x:Name="btn_dote" Grid.Row="7" Grid.Column="2" Content="," Margin="2" Background="#FF333333" FontFamily="Segoe UI" FontSize="24" Click="btn_dote_Click" />
+        <Button x:Name="btn_result" Grid.Row="7" Grid.Column="3" Content="=" Margin="2" Background="#FFC88307" FontFamily="Segoe UI" FontSize="24" Click="btn_result_Click"  />
+
+        <Button x:Name="btn_seven" Click="btn_one_Click" Grid.Row="4" Grid.Column="0" Content="7" Margin="2" Background="#FF333333" FontFamily="Segoe UI" FontSize="24" />
+        <Button x:Name="btn_eight" Click="btn_one_Click" Grid.Row="4" Grid.Column="1" Content="8" Margin="2" Background="#FF333333" FontFamily="Segoe UI" FontSize="24" />
+        <Button x:Name="btn_nine" Click="btn_one_Click" Grid.Row="4" Grid.Column="2" Content="9" Margin="2" Background="#FF333333" FontFamily="Segoe UI" FontSize="24" />
+        <Button x:Name="btn_four" Click="btn_one_Click" Grid.Row="5" Grid.Column="0" Content="4" Margin="2" Background="#FF333333" FontFamily="Segoe UI" FontSize="24" />
+        <Button x:Name="btn_five" Click="btn_one_Click" Grid.Row="5" Grid.Column="1" Content="5" Margin="2" Background="#FF333333" FontFamily="Segoe UI" FontSize="24" />
+        <Button x:Name="btn_six" Click="btn_one_Click" Grid.Row="5" Grid.Column="2" Content="6" Margin="2" Background="#FF333333" FontFamily="Segoe UI" FontSize="24" />
+        <Button x:Name="btn_one" Grid.Row="6" Grid.Column="0" Content="1" Margin="2" Background="#FF333333" FontFamily="Segoe UI" FontSize="24" Click="btn_one_Click" />
+        <Button x:Name="btn_two" Grid.Row="6" Grid.Column="1" Content="2" Margin="2" Background="#FF333333" FontFamily="Segoe UI" FontSize="24" Click="btn_one_Click" />
+        <Button x:Name="btn_three" Grid.Row="6" Grid.Column="2" Content="3" Margin="2" Background="#FF333333" FontFamily="Segoe UI" FontSize="24" Click="btn_one_Click" />
+        <Button x:Name="btn_zero" Grid.Row="7" Grid.Column="0" Content="0" Margin="2" Grid.ColumnSpan="2" Background="#FF333333" FontFamily="Segoe UI" FontSize="24" Click="btn_one_Click"/>
+
+        
+
+    </Grid>
+</Page>
